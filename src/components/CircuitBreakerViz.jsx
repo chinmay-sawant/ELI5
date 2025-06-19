@@ -42,6 +42,12 @@ export default function CircuitBreakerViz() {
     "half-open": "#fbc02d",
   };
 
+  // Detect dark mode (simple heuristic based on background color or prefers-color-scheme)
+  const isDark =
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
   return (
     <div
       style={{
@@ -49,7 +55,7 @@ export default function CircuitBreakerViz() {
         borderRadius: 12,
         padding: 24,
         margin: "2rem 0 1.5rem 0",
-        background: "var(--cb-bg, #f9f9f9)",
+        background: isDark ? "#23272f" : "var(--cb-bg, #f9f9f9)",
         maxWidth: 420,
         boxShadow: "0 2px 12px #0001",
       }}
@@ -65,7 +71,14 @@ export default function CircuitBreakerViz() {
             marginRight: 10,
           }}
         />
-        <b style={{ fontFamily: "Fira Mono, monospace", fontSize: 18 }}>
+        <b
+          style={{
+            fontFamily: "Fira Mono, monospace",
+            fontSize: 18,
+            color: isDark ? "#fff" : "#222",
+            letterSpacing: 1,
+          }}
+        >
           Circuit: {state.toUpperCase()}
         </b>
       </div>
@@ -77,8 +90,15 @@ export default function CircuitBreakerViz() {
           Reset
         </button>
       </div>
-      <div style={{ fontSize: 14, marginBottom: 8 }}>
-        Failures before open: <b>{3 - failures}</b>
+      <div
+        style={{
+          fontSize: 14,
+          marginBottom: 8,
+          color: isDark ? "#fff" : "#222",
+        }}
+      >
+        Failures before open:{" "}
+        <b style={{ color: isDark ? "#ffe082" : "#e53935" }}>{3 - failures}</b>
       </div>
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap", minHeight: 32 }}>
         {requests.slice(-10).map((req, i) => (
