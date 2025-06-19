@@ -1,4 +1,25 @@
-# React + Vite
+# ELI5 (Explain Like I'm 5)
+
+This website is inspired by [samwho.dev](https://samwho.dev/).
+
+This is my attempt at explaining technical concepts in a short, visual, and beginner-friendly format. The goal is to make learning approachable and fun, especially for those new to programming or specific technologies.
+
+**Note:** This is a hobby project and may not always be up to date. Contributions and suggestions are welcome!
+
+---
+
+## Quick Links
+
+- **Want to Learn Go Lang?**  
+  [Go by Example](/golang)
+- **Want to Learn Gin Framework?**  
+  [Gin Framework](/gogin)
+- **Want to Learn Microservices?**  
+  [Microservices](/microservices)
+
+---
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
