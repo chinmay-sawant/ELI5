@@ -1,4 +1,5 @@
 import React from "react";
+import CircuitBreakerViz from "../../components/CircuitBreakerViz";
 
 function Microservices() {
   return (
@@ -42,6 +43,7 @@ function Microservices() {
           <br />
           <em>Example technologies:</em> Netflix Hystrix, Resilience4j, Spring
           Cloud Circuit Breaker
+          <CircuitBreakerViz />
         </li>
         <li style={{ marginTop: "1.2rem" }}>
           <strong>Discovery Design Pattern</strong>
