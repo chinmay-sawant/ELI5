@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 import Learn from "./pages/Learn.jsx";
-import Golang from "./pages/Golang.jsx";
-import Gogin from "./pages/Gogin.jsx";
-import Microservices from "./pages/Microservices.jsx";
+import Golang from "./pages/Golang/Golang.jsx";
+import Gogin from "./pages/GoGin/Gogin.jsx";
+import Microservices from "./pages/Microservices/Microservices.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

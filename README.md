@@ -9,13 +9,12 @@ This is my attempt at explaining technical concepts in a short, visual, and begi
 ---
 
 ## Quick Links
-
 - **Want to Learn Go Lang?**  
-  [Go by Example](/golang)
+    [Go by Example](/src/pages/Golang)
 - **Want to Learn Gin Framework?**  
-  [Gin Framework](/gogin)
+    [Gin Framework](/src/pages/GoGin)
 - **Want to Learn Microservices?**  
-  [Microservices](/microservices)
+    [Microservices](/src/pages/Microservices)
 
 ---
 
