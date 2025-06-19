@@ -1,0 +1,287 @@
+/* Importing Fira Mono font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap");
+
+/* Minimal, card-based, portfolio-inspired design */
+:root {
+  --background-light: #f7f8fa;
+  --background-dark: #181a20;
+  --text-light: #181a20;
+  --text-dark: #f7f8fa;
+  --primary: #5c6bc0;
+  --header-bg-light: #fff;
+  --header-bg-dark: #23272f;
+  --border-radius: 16px;
+  --card-bg-light: #fff;
+  --card-bg-dark: #23272f;
+  --card-shadow: 0 2px 16px 0 rgba(60, 60, 60, 0.07);
+  --transition: background 0.3s, color 0.3s;
+  --nav-width: 220px;
+  --nav-collapsed-width: 56px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Fira Mono", monospace, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  background: var(--background-light);
+  color: var(--text-light);
+  transition: var(--transition);
+}
+[data-theme="dark"] body {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  background: inherit;
+  color: inherit;
+}
+
+.main-content {
+  margin-left: var(--nav-collapsed-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left 0.3s;
+}
+.side-nav.open ~ .main-content {
+  margin-left: var(--nav-width);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: var(--header-bg-light);
+  border-bottom: 1px solid #e0e0e0;
+  transition: var(--transition);
+}
+[data-theme="dark"] .app-header {
+  background: var(--header-bg-dark);
+  border-bottom: 1px solid #23272f;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.theme-toggle {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1.2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme-toggle:hover {
+  background: #3949ab;
+}
+
+.theme-toggle-fixed {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  z-index: 1000;
+  background: none;
+}
+.theme-toggle-icon {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px 0 rgba(60, 60, 60, 0.07);
+}
+.theme-toggle-icon:hover {
+  background: #3949ab;
+}
+
+/* Remove header background if any */
+.app-header,
+.minimal-header {
+  background: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  background: inherit;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card-bg-light);
+  color: inherit;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 2rem 2.5rem;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s, color 0.3s;
+}
+[data-theme="dark"] .card {
+  background: var(--card-bg-dark);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.card ul,
+.card p {
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+}
+
+.card ul {
+  list-style: none;
+}
+
+.card ul li {
+  margin-bottom: 0.5rem;
+}
+
+.card a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.card a:hover {
+  text-decoration: underline;
+  color: #3949ab;
+}
+
+.golang-page.minimal {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: none;
+  color: inherit;
+}
+.golang-page.minimal h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: var(--primary);
+}
+.go-example-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.go-example-list li {
+  margin-bottom: 0.5rem;
+}
+.go-example-list a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.08rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--border-radius);
+  transition: background 0.15s, color 0.15s;
+  display: inline-block;
+}
+.go-example-list a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Side nav styles remain unchanged for minimal look */
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: var(--nav-collapsed-width);
+  background: var(--header-bg-light);
+  border-right: 1px solid #e0e0e0;
+  transition: width 0.3s, background 0.3s;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1rem;
+}
+[data-theme="dark"] .side-nav {
+  background: var(--header-bg-dark);
+  border-right: 1px solid #23272f;
+}
+.side-nav.open {
+  width: var(--nav-width);
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+.side-nav nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.side-nav.open nav {
+  opacity: 1;
+  pointer-events: auto;
+}
+.side-nav nav a {
+  padding: 0.75rem 1.5rem;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.side-nav nav a.active,
+.side-nav nav a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .app-main,
+  .golang-page.minimal {
+    padding: 1rem 0.5rem;
+  }
+  .card {
+    padding: 1rem 1rem;
+  }
+}
