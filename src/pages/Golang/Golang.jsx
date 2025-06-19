@@ -167,7 +167,7 @@ const goExamples = [
 
 function Golang() {
   return (
-    <div className="golang-page minimal">
+    <div className="golang-page minimal left-align">
       <h2>Go by Example</h2>
       <ul className="go-example-list">
         {goExamples.map((ex) => (
